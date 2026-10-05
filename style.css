@@ -1,0 +1,171 @@
+:root {
+    --azul: #1a2f5e;
+    --azul-claro: #e6eefa;
+    --laranja: #ff8c42;
+    --branco: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f4;
+    color: #333;
+}
+
+.menu {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 30px;
+    background-color: var(--azul);
+    color: var(--branco);
+}
+
+.menu nav {
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    color: var(--branco);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: var(--laranja);
+}
+
+.inicio {
+    position: relative;
+    text-align: center;
+    padding: 70px 20px;
+    background-color: var(--azul-claro);
+}
+
+.estrela {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: var(--laranja);
+    font-size: 30px;
+}
+
+.foguete {
+    font-size: 50px;
+    animation: flutuar 2s infinite;
+}
+
+@keyframes flutuar {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+main {
+    max-width: 900px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: var(--azul);
+}
+
+.sobre {
+    display: flex;
+    gap: 20px;
+}
+
+.sobre div {
+    flex: 1;
+    background-color: var(--branco);
+    padding: 20px;
+}
+
+.grade {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.grade article {
+    background-color: var(--branco);
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.grade article:hover {
+    transform: translateY(-5px);
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.galeria img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.topo {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background-color: var(--laranja);
+    color: var(--branco);
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+footer {
+    position: static;
+    text-align: center;
+    padding: 20px;
+    background-color: var(--azul);
+    color: var(--branco);
+}
+
+@media (max-width: 600px) {
+
+    .menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .sobre {
+        flex-direction: column;
+    }
+
+    .grade,
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+}
